@@ -1,0 +1,45 @@
+<header>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="pwa-popup/icons/apple-touch-icon-180-180.png">
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"> -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="apple-mobile-web-app-title" content="Intancio">
+  <meta name="application-name" content="Intancio">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</header>
+
+<footer>
+<!-- PWA start -->
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js')
+  .then((reg) => {
+    // регистрация сработала
+    console.log('Registration succeeded. Scope is ' + reg.scope);
+  }).catch((error) => {
+    // регистрация прошла неудачно
+    console.log('Registration failed with ' + error);
+  });
+}
+</script>
+<script src="pwa-popup/pwa.js?v=2" defer></script>
+<div class="wrap-pwa-block">
+  <div class="pwa-block">
+    <div class="pwa-block__img">
+      <img src="pwa-popup/icons/logo-w.svg" clas="img-fluid" alt="">
+    </div>    
+    <div class="pwa-block__text">
+      У нас появилось замечательное приложение
+    </div>
+    <p>Скачайте его для легкого и удобного доступа к покупкам</p>
+    <div class="js-wrapOS">
+      <div class="js-pwa-btn main-btn">Установить приложение</div>
+    </div>
+    <div class="pwa-block__exit js-pwa-exit"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 512 512"><title>ionicons-v5-l</title><line x1="368" y1="368" x2="144" y2="144" style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></line><line x1="368" y1="144" x2="144" y2="368" style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></line></svg></div>
+  </div>
+</div>
+<!-- PWA end -->
+</footer>
